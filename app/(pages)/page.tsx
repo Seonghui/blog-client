@@ -1,10 +1,11 @@
 import Link from "next/link";
 import { getMarkdownFiles } from "@/app/lib/markdown";
+import PageWrapper from "../components/PageWrapper";
 
 function Page() {
   const files = getMarkdownFiles();
   return (
-    <div>
+    <PageWrapper>
       <ul>
         {files.map((file) => (
           <li key={file.slug}>
@@ -12,7 +13,7 @@ function Page() {
           </li>
         ))}
       </ul>
-    </div>
+    </PageWrapper>
   );
 }
 
