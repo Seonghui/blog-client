@@ -10,6 +10,7 @@ export function getMarkdownFileContent(fileName: string) {
     const rawContent = fs.readFileSync(fullPath, "utf8");
 
     const { data, content } = matter(rawContent);
+
     return {
       slug: fileName.replace(/\.md$/, ""),
       data,

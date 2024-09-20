@@ -1,5 +1,5 @@
 function Page() {
-  return "";
+  return "about";
 }
 
 export default Page;
