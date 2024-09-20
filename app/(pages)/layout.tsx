@@ -14,9 +14,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ko">
-      <body className={`container mx-auto px-4 ${GeistMono.className}`}>
+      <body className={`${GeistMono.className}`}>
         <Navbar />
-        {children}
+        <main className="container mx-auto lg:max-w-screen-md sm:max-w-screen-sm">
+          {children}
+        </main>
       </body>
     </html>
   );

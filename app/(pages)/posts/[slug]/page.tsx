@@ -7,7 +7,7 @@ function Page({ params }: { params: { slug: string } }) {
   const data = getMarkdownFileContent(`${params.slug}.md`);
   return (
     <PageWrapper>
-      <div className="markdown-body" style={{ fontFamily: "inherit" }}>
+      <div className="markdown-body post-page-style">
         <ReactMarkdown>{data?.content}</ReactMarkdown>
       </div>
     </PageWrapper>
