@@ -6,6 +6,7 @@ tags: ["astro", "blogging", "learning"]
 ---
 
 Code Blocks
+코드 블럭
 
     4 space indention
     makes full-width
