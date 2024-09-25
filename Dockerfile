@@ -1,5 +1,5 @@
 # 1. 베이스 이미지 선택
-FROM node:20.1.0-alpine AS builder
+FROM node:20-alpine AS builder
 
 # 2. 작업 디렉토리 설정
 WORKDIR /app
@@ -15,7 +15,7 @@ COPY . .
 RUN npm run build
 
 # 6. 런타임 이미지 설정
-FROM node:20.1.0-alpine AS runner
+FROM node:20-alpine AS runner
 
 
 # 7. 작업 디렉토리 설정
