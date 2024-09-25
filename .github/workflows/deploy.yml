@@ -32,6 +32,7 @@ jobs:
       - name: Pre-pull Docker Image on Server
         run: |
           ssh -o StrictHostKeyChecking=no ${{ secrets.SSH_USERNAME }}@${{ secrets.SSH_HOST }} "\
+            export PATH=$PATH:/usr/local/bin && \
             docker pull node:20.1.0-alpine"
 
       - name: Copy files to Home Server
