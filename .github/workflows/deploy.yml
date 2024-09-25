@@ -36,14 +36,10 @@ jobs:
             .next public package.json package-lock.json docker-compose.yml Dockerfile \
             ${{ secrets.SSH_USERNAME }}@${{ secrets.SSH_HOST }}:/opt/homebrew/var/www
 
-      - name: Check node and npm paths on server
-        run: |
-          ssh -o StrictHostKeyChecking=no ${{ secrets.SSH_USERNAME }}@${{ secrets.SSH_HOST }} "\
-            which node && which npm"
-
       - name: Install dependencies on server
         run: |
           ssh -o StrictHostKeyChecking=no ${{ secrets.SSH_USERNAME }}@${{ secrets.SSH_HOST }} "\
+            export PATH=/usr/local/bin:$PATH && \
             cd /opt/homebrew/var/www && \
             /usr/local/bin/npm install"
 
