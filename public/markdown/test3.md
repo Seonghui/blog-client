@@ -2,7 +2,8 @@
 title: 한글 테스트
 author: stella
 date: "2024-09-24"
-tags: ["astro", "blogging", "learning"]
+subtitle: 국가는 모성의 보호를 위하여 노력하여야 한다.
+tags: ["astro", "blogging", "korean"]
 ---
 
 # 마크다운 태그 테스트 문서

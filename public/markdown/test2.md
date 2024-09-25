@@ -1,8 +1,9 @@
 ---
-title: 테스트
+title: 민주평화통일자문회의의 조직·직무범위 기타 필요한 사항은 법률로 정한다. 이 헌법시행 당시의 법령과 조약은 이 헌법에 위배되지 아니하는 한 그 효력을 지속한다.
 author: stella
 date: "2024-09-19"
-tags: ["astro", "blogging", "learning"]
+subtitle: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis at erat ex.
+tags: ["test", "blogging", "learning"]
 ---
 
 # Markdown syntax guide
