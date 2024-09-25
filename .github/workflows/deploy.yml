@@ -13,6 +13,17 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v3
 
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: "20.1"
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Build Next.js app
+        run: npm run build
+
       - name: Setup SSH
         uses: webfactory/ssh-agent@v0.5.3
         with:
@@ -22,8 +33,20 @@ jobs:
         run: |
           rsync -avz --delete \
             -e "ssh -o StrictHostKeyChecking=no" \
-            ./ \
+            .next public package.json package-lock.json docker-compose.yml \
             ${{ secrets.SSH_USERNAME }}@${{ secrets.SSH_HOST }}:/opt/homebrew/var/www
+
+      - name: Install dependencies on server
+        run: |
+          ssh -o StrictHostKeyChecking=no ${{ secrets.SSH_USERNAME }}@${{ secrets.SSH_HOST }} "\
+            cd /opt/homebrew/var/www && \
+            npm install"
+
+      - name: Deploy with Docker Compose
+        run: |
+          ssh -o StrictHostKeyChecking=no ${{ secrets.SSH_USERNAME }}@${{ secrets.SSH_HOST }} "\
+            cd /opt/homebrew/var/www && \
+            docker-compose up --build -d"
 
       - name: Restart Nginx
         run: |

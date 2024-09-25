@@ -10,3 +10,4 @@ services:
       - "3000:3000" # 내부에서 3000 포트를 사용
     environment:
       - NODE_ENV=production
+    restart: always
