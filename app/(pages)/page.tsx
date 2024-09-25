@@ -21,7 +21,7 @@ function Page() {
               {file.data.tags.map((tag: string, index: number) => {
                 return (
                   <>
-                    "
+                    &quot;
                     <Link
                       href={`/tags/${tag}`}
                       key={tag}
@@ -29,7 +29,7 @@ function Page() {
                     >
                       {tag}
                     </Link>
-                    "{index < file.data.tags.length - 1 ? ", " : ""}
+                    &quot;{index < file.data.tags.length - 1 ? ", " : ""}
                   </>
                 );
               })}
