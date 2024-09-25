@@ -29,6 +29,11 @@ jobs:
         with:
           ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
 
+      - name: Pre-pull Docker Image on Server
+        run: |
+          ssh -o StrictHostKeyChecking=no ${{ secrets.SSH_USERNAME }}@${{ secrets.SSH_HOST }} "\
+            docker pull node:20.1.0-alpine"
+
       - name: Copy files to Home Server
         run: |
           rsync -avz --delete \
