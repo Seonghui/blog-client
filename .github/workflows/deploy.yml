@@ -38,7 +38,7 @@ jobs:
 
       - name: Install dependencies on server
         run: |
-          ssh -o -t StrictHostKeyChecking=no ${{ secrets.SSH_USERNAME }}@${{ secrets.SSH_HOST }} "\
+          ssh -t -o StrictHostKeyChecking=no ${{ secrets.SSH_USERNAME }}@${{ secrets.SSH_HOST }} "\
             cd /opt/homebrew/var/www && \
             /usr/local/bin/npm install"
 
