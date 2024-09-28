@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import Navbar from "../components/NavBar";
 import { GeistMono } from "geist/font/mono";
 
 export const metadata: Metadata = {
@@ -18,12 +17,7 @@ export default function RootLayout({
   return (
     <html lang="ko">
       <link rel="icon" href="/favicon.ico" sizes="any" />
-      <body className={`${GeistMono.className}`}>
-        <Navbar />
-        <main className="container mx-auto lg:max-w-screen-md sm:max-w-screen-sm">
-          {children}
-        </main>
-      </body>
+      <body className={`${GeistMono.className}`}>{children}</body>
     </html>
   );
 }

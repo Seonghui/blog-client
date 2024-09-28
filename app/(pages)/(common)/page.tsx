@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { getMarkdownFiles } from "@/app/lib/markdown";
-import PageWrapper from "../components/PageWrapper";
+import PageWrapper from "@/app/components/PageWrapper";
 
 function Page() {
   const files = getMarkdownFiles();
