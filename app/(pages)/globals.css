@@ -12,4 +12,8 @@
   .post-page-style ol > li {
     list-style: decimal;
   }
+
+  .primary-btn {
+    @apply w-full bg-black text-white  font-medium  rounded-md text-center;
+  }
 }
