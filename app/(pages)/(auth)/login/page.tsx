@@ -10,20 +10,10 @@ export default function Page() {
   return (
     <form action={dispatch} className="flex flex-col gap-3 h-64">
       <Input
-        name="username"
-        type="text"
-        placeholder="Username"
-        required
-        errors={state?.errors ?? []}
-        minLength={3}
-        maxLength={10}
-      />
-      <Input
         name="email"
         type="email"
         placeholder="Email"
         required
-        errors={state?.errors ?? []}
       />
       <Input
         name="password"
@@ -32,8 +22,8 @@ export default function Page() {
         minLength={4}
         required
         autoComplete="new-password"
-        errors={state?.errors ?? []}
       />
+      <div className="text-left text-red-500">{state?.error}</div>
       <Button text="Login" />
     </form>
   );
